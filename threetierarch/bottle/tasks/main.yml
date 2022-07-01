@@ -1,0 +1,13 @@
+---
+
+- name: ensure bottle is installed
+  pip: name=bottle state=latest
+
+- name: ensure mimerender is installed
+  pip: name=mimerender state=latest
+
+- name: ensure bottle extras are installed
+  pip: name={{item}} state=latest
+  with_items:
+    - bottle-extras
+    - bottle-redis

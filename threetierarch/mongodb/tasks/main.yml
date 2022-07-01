@@ -1,0 +1,18 @@
+---
+# tasks file for mongoDB setup
+
+- name: install mongoDB
+  apt: 
+    name: mongodb
+    state: present
+    update_cache: yes
+
+- name: copy config file
+  copy:
+    src: mongodb.conf
+    dest: /etc/mongodb.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart mongodb
