@@ -1,4 +1,4 @@
-Name: Workflow Demo
+name: Workflow Demo
 on:
   push:
     branches: [ $default-branch ]
